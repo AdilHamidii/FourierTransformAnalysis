@@ -7,6 +7,8 @@ import time # Pour mesurer le temps d'exécution
 
 # FCTS DE TRANSFORMÉES DE FOURIER ( DISCRETE )
 
+
+
 def dft_1d(x):
     x = np.asarray(x, dtype=complex)
     N = len(x)
@@ -186,7 +188,7 @@ print("\n===== 2D IMAGE TEST ( enlevement frequences medium ) =====")
 
 img = Image.open("black_hole.jpg").convert("L")
 
-img_small = img.resize((64, 64))
+img_small = img.resize((124, 124))
 img_np = np.array(img_small, dtype=float)
 
 # ------- DFT 2D -------
