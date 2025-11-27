@@ -1,4 +1,4 @@
-import numpy as np # Pour les opérations sur les tableaux ( pas de np.fft etc..)
+import numpy as np # Pour les opérations sur les tableaux  ( pas de np.fft etc..)
 from PIL import Image # Pour le chargement et la manipulation des images
 import matplotlib.pyplot as plt # Librairie Tres utile pour afficher des graphiques
 import cmath # Pour les nombres complexes
@@ -10,7 +10,7 @@ import time # Pour mesurer le temps d'exécution
 
 
 def dft_1d(x):
-    x = np.asarray(x, dtype=complex)
+    x = np.asarray(x, dtype=complex) 
     N = len(x)
     X = np.zeros(N, dtype=complex)
 
@@ -188,7 +188,7 @@ print("\n===== 2D IMAGE TEST ( enlevement frequences medium ) =====")
 
 img = Image.open("black_hole.jpg").convert("L")
 
-img_small = img.resize((124, 124))
+img_small = img.resize((32, 32))
 img_np = np.array(img_small, dtype=float)
 
 # ------- DFT 2D -------
@@ -199,8 +199,8 @@ print(f"DFT 2D : {time.time() - start:.4f} s")
 H, W = F_dft.shape
 cy, cx = H // 2, W // 2
 
-low_cut = 5       # keep everything inside radius 6
-high_cut = 35    # keep everything outside radius 14
+low_cut = 1      
+high_cut = 4 
 
 for u in range(H):
     for v in range(W):
